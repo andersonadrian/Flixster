@@ -19,13 +19,10 @@ import org.parceler.Parcels;
 
 import okhttp3.Headers;
 
+import static com.example.flixster.R.string.youtube_api_key;
+
 public class DetailActivity extends YouTubeBaseActivity {
 
-
-
-//   private  String YOUTUBE_API_KEY = getString(R.string.youtube_api_key);
-//   private  String YOUTUBE_API_KEY = getResources().getString(R.string.youtube_api_key);
-    private  String YOUTUBE_API_KEY = "AIzaSyAXvzj4htip3q3Biw9KGViTDQNFT4_BPnU";
     public  String VIDEOS_URL = "https://api.themoviedb.org/3/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
    private TextView tvTitle_2;
@@ -75,7 +72,7 @@ public class DetailActivity extends YouTubeBaseActivity {
     }
 
     private void initialYouube(final String youtubeKey) {
-        youTubePlayerView.initialize(YOUTUBE_API_KEY, new YouTubePlayer.OnInitializedListener() {
+        youTubePlayerView.initialize(getString(youtube_api_key), new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d("DetailActivity","onInitializationSuccess");
