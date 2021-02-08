@@ -23,8 +23,10 @@ public class DetailActivity extends YouTubeBaseActivity {
 
 
 
-   private  String YOUTUBE_API_KEY = "AIzaSyAdIKIPmoQp1Cz3cBWiXTvFSAPf0NeL2-w";
-   public  String VIDEOS_URL = "https://api.themoviedb.org/3/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
+//   private  String YOUTUBE_API_KEY = getString(R.string.youtube_api_key);
+//   private  String YOUTUBE_API_KEY = getResources().getString(R.string.youtube_api_key);
+    private  String YOUTUBE_API_KEY = "AIzaSyAXvzj4htip3q3Biw9KGViTDQNFT4_BPnU";
+    public  String VIDEOS_URL = "https://api.themoviedb.org/3/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
    private TextView tvTitle_2;
    private TextView tvOverview_2;
