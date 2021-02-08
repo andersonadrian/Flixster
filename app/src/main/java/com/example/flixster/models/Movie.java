@@ -8,19 +8,26 @@ import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Headers;
 
+@Parcel
 public class Movie {
+    int movieId;
     String posterPath;
     String backdropPath;
     String title;
     String overview;
     private String url;
     private String pictureSize;
+    double rating;
+
+    // empty constructor needed by the Parceler library
+    public Movie() {}
 
     public final String CONFIG_API = "https://api.themoviedb.org/3/configuration?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     public static final String TAG = "MovieActivity";
@@ -32,6 +39,8 @@ public class Movie {
         backdropPath = jsonObject.getString("backdrop_path");
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
+        rating = jsonObject.getDouble("vote_average");
+        movieId = jsonObject.getInt("id");
 
     }
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -87,5 +96,13 @@ public class Movie {
 
     public String getOverview() {
         return overview;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public int getMovieId() {
+        return movieId;
     }
 }
